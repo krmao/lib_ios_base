@@ -11,20 +11,12 @@
 		6003F58E195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F590195388D20070C39A /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58F195388D20070C39A /* CoreGraphics.framework */; };
 		6003F592195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
-		6003F598195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F596195388D20070C39A /* InfoPlist.strings */; };
-		6003F59A195388D20070C39A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F599195388D20070C39A /* main.m */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */; };
 		BD4EEC9F3400AEA4AF958A6D /* Pods_LibIosBase_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 75C4EB8DB13AF085505E1FE2 /* Pods_LibIosBase_Tests.framework */; };
-		F82DEC1D25F72A4600F35FCA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F82DEC0D25F72A4600F35FCA /* Images.xcassets */; };
-		F82DEC1E25F72A4600F35FCA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = F82DEC0E25F72A4600F35FCA /* main.m */; };
-		F82DEC1F25F72A4600F35FCA /* STAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = F82DEC0F25F72A4600F35FCA /* STAppDelegate.m */; };
-		F82DEC2025F72A4600F35FCA /* LibIosBase-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F82DEC1125F72A4600F35FCA /* LibIosBase-Info.plist */; };
-		F82DEC2325F72A4600F35FCA /* STViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F82DEC1725F72A4600F35FCA /* STViewController.m */; };
 		F8BDBB3825D0EC56007A6B1B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BDBB3725D0EC56007A6B1B /* libz.tbd */; };
 		F8BDBB3C25D0EC62007A6B1B /* libbz2.1.0.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = F8BDBB3B25D0EC62007A6B1B /* libbz2.1.0.tbd */; };
 /* End PBXBuildFile section */
@@ -48,10 +40,6 @@
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		6003F595195388D20070C39A /* LibIosBase-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "LibIosBase-Info.plist"; sourceTree = "<group>"; };
-		6003F597195388D20070C39A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		6003F599195388D20070C39A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		6003F59B195388D20070C39A /* LibIosBase-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "LibIosBase-Prefix.pch"; sourceTree = "<group>"; };
 		6003F5AE195388D20070C39A /* LibIosBase_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LibIosBase_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F5AF195388D20070C39A /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		6003F5B7195388D20070C39A /* Tests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Tests-Info.plist"; sourceTree = "<group>"; };
@@ -59,23 +47,14 @@
 		6003F5BB195388D20070C39A /* Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Tests.m; sourceTree = "<group>"; };
 		606FC2411953D9B200FFA9A0 /* Tests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Tests-Prefix.pch"; sourceTree = "<group>"; };
 		66C5F458A529178698AF22D3 /* Pods_LibIosBase_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibIosBase_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		71719F9E1E33DC2100824A3D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		75C4EB8DB13AF085505E1FE2 /* Pods_LibIosBase_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LibIosBase_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A4D8146B21A7C51FBAF1AD4 /* Pods-CodesDancing_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodesDancing_Tests.debug.xcconfig"; path = "Target Support Files/Pods-CodesDancing_Tests/Pods-CodesDancing_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		99BE087BDDB81DF78E2A974D /* CodesDancing.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = CodesDancing.podspec; path = ../CodesDancing.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		AB560DEB0C9BE74F766BAFFF /* Pods-CodesDancing_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodesDancing_Tests.release.xcconfig"; path = "Target Support Files/Pods-CodesDancing_Tests/Pods-CodesDancing_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B518D63DDAD12ED9C8E2D34F /* Pods-LibIosBase_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibIosBase_Example.release.xcconfig"; path = "Target Support Files/Pods-LibIosBase_Example/Pods-LibIosBase_Example.release.xcconfig"; sourceTree = "<group>"; };
 		C2124A0A96B6F45F6CF08F83 /* Pods-CodesDancing_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CodesDancing_Example.debug.xcconfig"; path = "Target Support Files/Pods-CodesDancing_Example/Pods-CodesDancing_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E41B495441BCCDDFB3A61473 /* Pods-LibIosBase_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LibIosBase_Example.debug.xcconfig"; path = "Target Support Files/Pods-LibIosBase_Example/Pods-LibIosBase_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		E7061F8152C2B6B7578C989A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		F82DEC0D25F72A4600F35FCA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = LibIosBase/Images.xcassets; sourceTree = SOURCE_ROOT; };
-		F82DEC0E25F72A4600F35FCA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = LibIosBase/main.m; sourceTree = SOURCE_ROOT; };
-		F82DEC0F25F72A4600F35FCA /* STAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STAppDelegate.m; path = LibIosBase/STAppDelegate.m; sourceTree = SOURCE_ROOT; };
-		F82DEC1025F72A4600F35FCA /* STViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STViewController.h; path = LibIosBase/STViewController.h; sourceTree = SOURCE_ROOT; };
-		F82DEC1125F72A4600F35FCA /* LibIosBase-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; name = "LibIosBase-Info.plist"; path = "LibIosBase/LibIosBase-Info.plist"; sourceTree = SOURCE_ROOT; };
-		F82DEC1725F72A4600F35FCA /* STViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = STViewController.m; path = LibIosBase/STViewController.m; sourceTree = SOURCE_ROOT; };
-		F82DEC1825F72A4600F35FCA /* STAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = STAppDelegate.h; path = LibIosBase/STAppDelegate.h; sourceTree = SOURCE_ROOT; };
-		F82DEC1C25F72A4600F35FCA /* LibIosBase-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "LibIosBase-Prefix.pch"; path = "LibIosBase/LibIosBase-Prefix.pch"; sourceTree = SOURCE_ROOT; };
+		F82DEE3E25F7586300F35FCA /* LibIosBase.podspec */ = {isa = PBXFileReference; lastKnownFileType = text; name = LibIosBase.podspec; path = ../LibIosBase.podspec; sourceTree = "<group>"; };
 		F8BDBB3725D0EC56007A6B1B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
 		F8BDBB3B25D0EC62007A6B1B /* libbz2.1.0.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libbz2.1.0.tbd; path = usr/lib/libbz2.1.0.tbd; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
@@ -112,7 +91,6 @@
 			isa = PBXGroup;
 			children = (
 				60FF7A9C1954A5C5007DD14C /* Podspec Metadata */,
-				6003F593195388D20070C39A /* Example for CodesDancing */,
 				6003F5B5195388D20070C39A /* Tests */,
 				6003F58C195388D20070C39A /* Frameworks */,
 				6003F58B195388D20070C39A /* Products */,
@@ -144,35 +122,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		6003F593195388D20070C39A /* Example for CodesDancing */ = {
-			isa = PBXGroup;
-			children = (
-				F82DEC0D25F72A4600F35FCA /* Images.xcassets */,
-				F82DEC1125F72A4600F35FCA /* LibIosBase-Info.plist */,
-				F82DEC1C25F72A4600F35FCA /* LibIosBase-Prefix.pch */,
-				F82DEC0E25F72A4600F35FCA /* main.m */,
-				F82DEC1825F72A4600F35FCA /* STAppDelegate.h */,
-				F82DEC0F25F72A4600F35FCA /* STAppDelegate.m */,
-				F82DEC1025F72A4600F35FCA /* STViewController.h */,
-				F82DEC1725F72A4600F35FCA /* STViewController.m */,
-				71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */,
-				6003F594195388D20070C39A /* Supporting Files */,
-			);
-			name = "Example for CodesDancing";
-			path = CodesDancing;
-			sourceTree = "<group>";
-		};
-		6003F594195388D20070C39A /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				6003F595195388D20070C39A /* LibIosBase-Info.plist */,
-				6003F596195388D20070C39A /* InfoPlist.strings */,
-				6003F599195388D20070C39A /* main.m */,
-				6003F59B195388D20070C39A /* LibIosBase-Prefix.pch */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		6003F5B5195388D20070C39A /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +144,7 @@
 		60FF7A9C1954A5C5007DD14C /* Podspec Metadata */ = {
 			isa = PBXGroup;
 			children = (
-				99BE087BDDB81DF78E2A974D /* CodesDancing.podspec */,
+				F82DEE3E25F7586300F35FCA /* LibIosBase.podspec */,
 				16CCED4463212B0609F973B7 /* README.md */,
 				E7061F8152C2B6B7578C989A /* LICENSE */,
 			);
@@ -299,10 +248,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F82DEC1D25F72A4600F35FCA /* Images.xcassets in Resources */,
-				F82DEC2025F72A4600F35FCA /* LibIosBase-Info.plist in Resources */,
-				71719F9F1E33DC2100824A3D /* LaunchScreen.storyboard in Resources */,
-				6003F598195388D20070C39A /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -420,10 +365,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F82DEC1E25F72A4600F35FCA /* main.m in Sources */,
-				6003F59A195388D20070C39A /* main.m in Sources */,
-				F82DEC1F25F72A4600F35FCA /* STAppDelegate.m in Sources */,
-				F82DEC2325F72A4600F35FCA /* STViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -446,28 +387,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		6003F596195388D20070C39A /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				6003F597195388D20070C39A /* en */,
-			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
 		6003F5B8195388D20070C39A /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
 				6003F5B9195388D20070C39A /* en */,
 			);
 			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		71719F9D1E33DC2100824A3D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				71719F9E1E33DC2100824A3D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -552,8 +477,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CodesDancing/LibIosBase-Prefix.pch";
-				INFOPLIST_FILE = "CodesDancing/LibIosBase-Info.plist";
+				GCC_PREFIX_HEADER = "LibIosBase/LibIosBase-Prefix.pch";
+				INFOPLIST_FILE = "LibIosBase/LibIosBase-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -568,8 +493,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "CodesDancing/LibIosBase-Prefix.pch";
-				INFOPLIST_FILE = "CodesDancing/LibIosBase-Info.plist";
+				GCC_PREFIX_HEADER = "LibIosBase/LibIosBase-Prefix.pch";
+				INFOPLIST_FILE = "LibIosBase/LibIosBase-Info.plist";
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";

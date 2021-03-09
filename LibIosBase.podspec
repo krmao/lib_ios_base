@@ -1,5 +1,5 @@
 #
-# Be sure to run `pod lib lint CodesDancing.podspec' to ensure this is a
+# Be sure to run `pod lib lint LibIosBase.podspec' to ensure this is a
 # valid spec before submitting.
 #
 # Any lines starting with a # are optional, but their use is encouraged
@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'LibIosBase'
-  s.version          = '0.0.2'
+  s.version          = '0.0.3'
   s.summary          = 'LibIosBase'
 
 # This description is used to generate tags and improve search results.
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
   s.description      = <<-DESC
   source 'https://cdn.cocoapods.org/'
   source 'https://github.com/krmao/libsforios.git'
-  pod 'LibIosBase', '~>0.0.2'
+  pod 'LibIosBase', '~>0.0.3'
                        DESC
 
   s.homepage         = 'https://github.com/krmao/lib_ios_base'

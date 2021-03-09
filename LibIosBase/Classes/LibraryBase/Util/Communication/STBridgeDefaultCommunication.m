@@ -1,6 +1,6 @@
 //
 //  STBridgeDefaultCommunication.m
-//  CodesDancing
+//  LibIosBase
 //
 //  Created by krmao on 2021/2/9.
 //
@@ -8,21 +8,20 @@
 #import "STBridgeDefaultCommunication.h"
 #import "STJsonUtil.h"
 #import "UIViewController+TopMostViewController.h"
-
+#import "STBusManager.h"
+"
 @implementation STBridgeDefaultCommunication
 +(void) handleBridge:(nullable UIViewController *) viewController functionName:(nullable NSString *) functionName params:(nullable NSString *) params callBackId:(nullable NSString *) callBackId callback: (nullable BridgeHandlerCallback) callback{
     NSDictionary* resultDict = [NSMutableDictionary new];
-    // if (viewController == nil) {
-    //     callback(callBackId, [STJsonUtil arrayOrDictionayToJsonString:resultDict]);
-    //     return;
-    // }
     
     NSDictionary* bridgeParamsDict = [STJsonUtil jsonStringToArrayOrDictionary:params];
 
     if ([@"open" isEqual: functionName]) {
         NSString* urlString = [bridgeParamsDict objectForKey:@"url"];
         if ([urlString hasPrefix:@"smart://template/flutter"]) {
-            // STBusManager.call(activity, "flutter/open", urlString)
+            if ([[bridgeParamsDict allKeys] containsObject:@"uniqueId"] ) {
+                [STBusManager callData:@"flutter/open" param:urlString];
+            }
             [resultDict setValue:@"true" forKey:@"result"];
         }else if ([urlString hasPrefix:@"smart://template/rn"]) {
             [resultDict setValue:@"true" forKey:@"result"];

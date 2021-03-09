@@ -1,14 +1,14 @@
 //
 //  STAppDelegate.m
-//  CodesDancing
+//  LibIosBase
 //
 //  Created by 767709667@qq.com on 02/08/2021.
 //  Copyright (c) 2021 767709667@qq.com. All rights reserved.
 //
 
 #import "STAppDelegate.h"
-#import "CodesDancing/STInitializer.h"
-#import "CodesDancing/STBridgeDefaultCommunication.h"
+#import "LibIosBase/STInitializer.h"
+#import "LibIosBase/STBridgeDefaultCommunication.h"
 
 @implementation STAppDelegate
 

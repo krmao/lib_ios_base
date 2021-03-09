@@ -117,6 +117,9 @@ static STBusManager *bus;
 }
 
 + (id)callData:(NSString *)bizName param:(NSObject *)param, ... NS_REQUIRES_NIL_TERMINATION {
+    
+    NSString* busKey = [[bizName componentsSeparatedByString:@"/"] firstObject];
+    NSLog(@"callData busKey=%@",busKey);
     IBusHandler *busObj = [STBusManager busObjectForName:bizName];
     if (!busObj) {
         NSAssert(false, @"busObj nil");

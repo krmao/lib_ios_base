@@ -1,12 +1,13 @@
 //
 //  STInitializer.m
-//  CodesDancing
+//  LibIosBase
 //
 //  Created by krmao on 2021/2/9.
 //
 
 #import "STInitializer.h"
 #import "STJsonUtil.h"
+#import "STBusManager.h"
 
 @implementation ConfigBridge
 @end
@@ -33,6 +34,12 @@ static STInitializer *instance = nil;
     [[STInitializer sharedInstance] setConfig:config];
     [[STInitializer sharedInstance] setConfigBridge:config.configBridge];
     [[STInitializer sharedInstance] setConfigBundle:config.configBundle];
+    
+    [STInitializer sharedInstance].configBundle.bundleBusHandlerClassMap enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
+        IBusHandler * busHandler = [(IBusHandler *) [NSClassFromString((NSString *) key) alloc] initWithHost:(NSString *) obj];
+        [STBusManager register:busHandler];
+    }
+    
     return [STInitializer sharedInstance];
 }
 
