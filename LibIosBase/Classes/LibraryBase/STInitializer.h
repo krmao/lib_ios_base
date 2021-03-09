@@ -24,7 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @end
 
 @interface Config : NSObject
-@property(nonatomic, strong, nullable, readwrite) id<UIApplicationDelegate> application;
+@property(nonatomic, strong, nullable, readwrite) UIApplication* application;
 @property(nonatomic, readwrite) BOOL appDebug;
 @property(nonatomic, strong, nullable, readwrite) ConfigBridge* configBridge;
 @property(nonatomic, strong, nullable, readwrite) ConfigBundle* configBundle;

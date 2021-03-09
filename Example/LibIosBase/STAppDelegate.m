@@ -25,7 +25,7 @@
 
     //region config
     Config *config = [Config new];
-    config.application = self;
+    config.application = application;
     config.appDebug = TRUE;
     config.configBridge = configBridge;
     //endregion
