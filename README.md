@@ -112,12 +112,12 @@ LibIosBase is available under the MIT license. See the LICENSE file for more inf
 * add to custom repo
   ```ruby
   pod lib lint --allow-warnings
-  pod repo push krmao LibIosBase.podspec --allow-warnings
+  pod repo push krmao LibIosBase.podspec --allow-warnings --verbose
   ```
 
 * how to use
   ```ruby
   source 'https://cdn.cocoapods.org/'
   source 'https://github.com/krmao/libsforios.git'
-  pod 'LibIosBase', '~>0.0.3'
+  pod 'LibIosBase', '~>0.0.6'
   ```
