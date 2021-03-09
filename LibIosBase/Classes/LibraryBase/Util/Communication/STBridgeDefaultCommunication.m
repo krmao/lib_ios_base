@@ -18,8 +18,10 @@
 
     if ([@"open" isEqual: functionName]) {
         NSString* urlString = [bridgeParamsDict objectForKey:@"url"];
+        NSLog(@"handleBridge open bridgeParamsDict=%@, urlString=%@", bridgeParamsDict, urlString);
         if ([urlString hasPrefix:@"smart://template/flutter"]) {
-            if ([[bridgeParamsDict allKeys] containsObject:@"uniqueId"] ) {
+            if([urlString containsString:@"uniqueId"]) {
+                NSLog(@"STBusManager callData");
                 [STBusManager callData:@"flutter/open" param:urlString, nil];
             }
             [resultDict setValue:@"true" forKey:@"result"];

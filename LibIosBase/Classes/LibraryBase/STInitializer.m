@@ -36,8 +36,11 @@ static STInitializer *instance = nil;
     [[STInitializer sharedInstance] setConfigBundle:config.configBundle];
     
     [[STInitializer sharedInstance].configBundle.bundleBusHandlerClassMap enumerateKeysAndObjectsUsingBlock:^(NSString * _Nonnull key, NSString * _Nonnull obj, BOOL * _Nonnull stop) {
-            IBusHandler * busHandler = [(IBusHandler *) [NSClassFromString((NSString *) key) alloc] initWithHost:(NSString *) obj];
+        if(key && obj){
+            IBusHandler * busHandler = [((IBusHandler *) [NSClassFromString(obj) alloc]) initWithHost:key];
+            NSLog(@"key=%@, obj=%@ busHandler=%@ businessNamePrefixAndURLHost=%@", key, obj, busHandler, busHandler.businessNamePrefixAndURLHost);
             [STBusManager register:busHandler];
+        }
     }];
     
     return [STInitializer sharedInstance];
