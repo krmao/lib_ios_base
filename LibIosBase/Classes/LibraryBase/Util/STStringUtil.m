@@ -5,11 +5,11 @@
 
 @implementation STStringUtil
 
-+ (NSURLComponents*) getUrlComponents:(NSString*)urlString {
-    return [[NSURLComponents alloc] initWithString:urlString];;
++ (NSURLComponents*)getUrlComponents:(NSString*)urlString{
+    return [[NSURLComponents alloc] initWithString:urlString];
 }
 
-+ (NSMutableDictionary*) getUrlQueryItemsDictionary:(NSString*)urlString {
++ (NSMutableDictionary*)getUrlQueryItemsDictionary:(NSString*)urlString {
     NSMutableDictionary *urlParamsDic = [[NSMutableDictionary alloc]init];
     NSURLComponents *urlComponents = [self getUrlComponents: urlString];
     [urlComponents.queryItems enumerateObjectsUsingBlock:^(NSURLQueryItem * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {

@@ -19,7 +19,7 @@ it, simply add the following line to your Podfile:
 ```ruby
   source 'https://cdn.cocoapods.org/'
   source 'https://github.com/krmao/libsforios.git'
-  pod 'LibIosBase', '~>0.0.3'
+  pod 'LibIosBase', '~>0.0.4'
 ```
 
 ## Author
@@ -47,7 +47,7 @@ LibIosBase is available under the MIT license. See the LICENSE file for more inf
 
   Pod::Spec.new do |s|
     s.name             = 'LibIosBase'
-    s.version          = '0.0.3'
+    s.version          = '0.0.4'
     s.summary          = 'LibIosBase'
 
   # This description is used to generate tags and improve search results.
@@ -104,7 +104,7 @@ LibIosBase is available under the MIT license. See the LICENSE file for more inf
   git add .
   git commit -m "commit and push"
   git push
-  git tag -a 0.0.3 -m 'version 0.0.3'
+  git tag -a 0.0.4 -m 'version 0.0.4'
   git push origin --tags
   git tag # show tags
   ```
