@@ -1,0 +1,80 @@
+PODS:
+  - AFNetworking (4.0.1):
+    - AFNetworking/NSURLSession (= 4.0.1)
+    - AFNetworking/Reachability (= 4.0.1)
+    - AFNetworking/Security (= 4.0.1)
+    - AFNetworking/Serialization (= 4.0.1)
+    - AFNetworking/UIKit (= 4.0.1)
+  - AFNetworking/NSURLSession (4.0.1):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (4.0.1)
+  - AFNetworking/Security (4.0.1)
+  - AFNetworking/Serialization (4.0.1)
+  - AFNetworking/UIKit (4.0.1):
+    - AFNetworking/NSURLSession
+  - Expecta (1.0.6)
+  - "Expecta+Snapshots (3.1.1)":
+    - Expecta (~> 1.0)
+    - FBSnapshotTestCase/Core (~> 2.0)
+    - Specta (~> 1.0)
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - LibIosBase (0.0.1):
+    - LibIosBase/LibraryBase (= 0.0.1)
+  - LibIosBase/LibraryBase (0.0.1):
+    - AFNetworking (~> 4.0)
+    - MBProgressHUD (~> 1.2.0)
+    - SDWebImage (~> 5.0)
+    - SSZipArchive
+    - YYModel
+  - MBProgressHUD (1.2.0)
+  - SDWebImage (5.9.4):
+    - SDWebImage/Core (= 5.9.4)
+  - SDWebImage/Core (5.9.4)
+  - Specta (1.0.7)
+  - SSZipArchive (2.2.3)
+  - YYModel (1.0.4)
+
+DEPENDENCIES:
+  - Expecta
+  - "Expecta+Snapshots"
+  - FBSnapshotTestCase
+  - LibIosBase (from `../`)
+  - Specta
+
+SPEC REPOS:
+  trunk:
+    - AFNetworking
+    - Expecta
+    - "Expecta+Snapshots"
+    - FBSnapshotTestCase
+    - MBProgressHUD
+    - SDWebImage
+    - Specta
+    - SSZipArchive
+    - YYModel
+
+EXTERNAL SOURCES:
+  LibIosBase:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  AFNetworking: 7864c38297c79aaca1500c33288e429c3451fdce
+  Expecta: 3b6bd90a64b9a1dcb0b70aa0e10a7f8f631667d5
+  "Expecta+Snapshots": dcff217eef506dabd6dfdc7864ea2da321fafbb8
+  FBSnapshotTestCase: 094f9f314decbabe373b87cc339bea235a63e07a
+  LibIosBase: 6f12f83a9442af2e323b657e4b240c1e591e7d92
+  MBProgressHUD: 3ee5efcc380f6a79a7cc9b363dd669c5e1ae7406
+  SDWebImage: b69257f4ab14e9b6a2ef53e910fdf914d8f757c1
+  Specta: 3e1bd89c3517421982dc4d1c992503e48bd5fe66
+  SSZipArchive: 62d4947b08730e4cda640473b0066d209ff033c9
+  YYModel: 2a7fdd96aaa4b86a824e26d0c517de8928c04b30
+
+PODFILE CHECKSUM: d4ff3e8f8b5259f35f1650af25601df9a7624fcb
+
+COCOAPODS: 1.10.0

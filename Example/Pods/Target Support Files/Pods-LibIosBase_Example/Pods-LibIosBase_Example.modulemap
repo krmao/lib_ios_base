@@ -1,0 +1,6 @@
+framework module Pods_LibIosBase_Example {
+  umbrella header "Pods-LibIosBase_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
