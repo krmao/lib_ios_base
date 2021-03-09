@@ -1,9 +1,9 @@
 {
   "name": "LibIosBase",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "summary": "LibIosBase",
-  "description": "source 'https://cdn.cocoapods.org/'\nsource 'https://github.com/krmao/libsforios.git'\npod 'LibIosBase', '~>0.0.1'",
-  "homepage": "https://github.com/krmao/libsforios-codesdancing",
+  "description": "source 'https://cdn.cocoapods.org/'\nsource 'https://github.com/krmao/libsforios.git'\npod 'LibIosBase', '~>0.0.3'",
+  "homepage": "https://github.com/krmao/lib_ios_base",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,8 +12,8 @@
     "767709667@qq.com": "767709667@qq.com"
   },
   "source": {
-    "git": "https://github.com/krmao/libsforios-codesdancing.git",
-    "tag": "0.0.1"
+    "git": "https://github.com/krmao/lib_ios_base.git",
+    "tag": "0.0.3"
   },
   "platforms": {
     "ios": "9.0"

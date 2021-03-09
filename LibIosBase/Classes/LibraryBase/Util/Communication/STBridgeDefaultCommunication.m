@@ -9,7 +9,7 @@
 #import "STJsonUtil.h"
 #import "UIViewController+TopMostViewController.h"
 #import "STBusManager.h"
-"
+
 @implementation STBridgeDefaultCommunication
 +(void) handleBridge:(nullable UIViewController *) viewController functionName:(nullable NSString *) functionName params:(nullable NSString *) params callBackId:(nullable NSString *) callBackId callback: (nullable BridgeHandlerCallback) callback{
     NSDictionary* resultDict = [NSMutableDictionary new];
@@ -20,7 +20,7 @@
         NSString* urlString = [bridgeParamsDict objectForKey:@"url"];
         if ([urlString hasPrefix:@"smart://template/flutter"]) {
             if ([[bridgeParamsDict allKeys] containsObject:@"uniqueId"] ) {
-                [STBusManager callData:@"flutter/open" param:urlString];
+                [STBusManager callData:@"flutter/open" param:urlString, nil];
             }
             [resultDict setValue:@"true" forKey:@"result"];
         }else if ([urlString hasPrefix:@"smart://template/rn"]) {

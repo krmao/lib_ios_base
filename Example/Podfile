@@ -2,15 +2,6 @@ use_frameworks!
 
 platform :ios, '10.0'
 
-target 'LibIosBase_Example' do
+target 'LibIosBaseExample' do
   pod 'LibIosBase', :path => '../'
-
-  target 'LibIosBase_Tests' do
-    inherit! :search_paths
-
-    pod 'Specta'
-    pod 'Expecta'
-    pod 'FBSnapshotTestCase'
-    pod 'Expecta+Snapshots'
-  end
 end
