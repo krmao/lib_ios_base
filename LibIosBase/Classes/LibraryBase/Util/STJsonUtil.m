@@ -19,7 +19,7 @@
     }
 }
 +(nullable id) jsonStringToArrayOrDictionary:(nullable NSString*)jsonString{
-    if(jsonString == nil) return nil;
+    if(jsonString == nil || [jsonString isKindOfClass:[NSNull class]]) return nil;
     NSData * jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
     return [NSJSONSerialization JSONObjectWithData:jsonData options:NSJSONReadingMutableContainers error:nil];;
 }
@@ -46,7 +46,7 @@
 
 // -json串转换成字典
 + (nullable NSDictionary *)dictionaryWithJsonString:(nullable NSString *)jsonString {
-    if (jsonString == nil) {
+    if (jsonString == nil || [jsonString isKindOfClass:[NSNull class]]) {
         return nil;
     }
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
@@ -60,7 +60,7 @@
 
 // -json串转换成数组
 + (id _Nullable)arrayWithJsonString:(nullable NSString *)jsonString {
-    if (jsonString == nil) {
+    if (jsonString == nil || [jsonString isKindOfClass:[NSNull class]]) {
         return nil;
     }
     NSData *jsonData = [jsonString dataUsingEncoding:NSUTF8StringEncoding];
