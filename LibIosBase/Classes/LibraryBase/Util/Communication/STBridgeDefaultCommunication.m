@@ -12,18 +12,15 @@
 
 @implementation STBridgeDefaultCommunication
 +(void) handleBridge:(nullable UIViewController *) viewController functionName:(nullable NSString *) functionName params:(nullable NSString *) params callBackId:(nullable NSString *) callBackId callback: (nullable BridgeHandlerCallback) callback{
-    NSDictionary* resultDict = [NSMutableDictionary new];
+    NSMutableDictionary* resultDict = [NSMutableDictionary new];
     
-    NSDictionary* bridgeParamsDict = [STJsonUtil jsonStringToArrayOrDictionary:params];
+    NSMutableDictionary* bridgeParamsDict = [STJsonUtil jsonStringToArrayOrDictionary:params];
 
     if ([@"open" isEqual: functionName]) {
         NSString* urlString = [bridgeParamsDict objectForKey:@"url"];
         NSLog(@"handleBridge open bridgeParamsDict=%@, urlString=%@", bridgeParamsDict, urlString);
         if ([urlString hasPrefix:@"smart://template/flutter"]) {
-            if([urlString containsString:@"uniqueId"]) {
-                NSLog(@"STBusManager callData");
-                [STBusManager callData:@"flutter/open" param:urlString, nil];
-            }
+            [STBusManager callData:@"flutter/open" param:urlString, nil];
             [resultDict setValue:@"true" forKey:@"result"];
         }else if ([urlString hasPrefix:@"smart://template/rn"]) {
             [resultDict setValue:@"true" forKey:@"result"];
@@ -63,16 +60,16 @@
             [resultDict setValue:(!value ? @"" : value) forKey:@"result"];
         }
     }else if ([@"getUserInfo" isEqual: functionName]) {
-        NSDictionary* data = [NSDictionary new];
+        NSMutableDictionary* data = [NSMutableDictionary new];
         [data setValue:@"smart" forKey:@"name"];
         [resultDict setValue:data forKey:@"result"];
     }else if ([@"getLocationInfo" isEqual: functionName]) {
-        NSDictionary* data = [NSDictionary new];
+        NSMutableDictionary* data = [NSMutableDictionary new];
         [data setValue:@"121.10,31.22" forKey:@"currentLatLng"];
         [data setValue:@"上海" forKey:@"currentCity"];
         [resultDict setValue:data forKey:@"result"];
     }else if ([@"getDeviceInfo" isEqual: functionName]) {
-        NSDictionary* data = [NSDictionary new];
+        NSMutableDictionary* data = [NSMutableDictionary new];
         [data setValue:@"ios" forKey:@"platform"];
         [resultDict setValue:data forKey:@"result"];
     }else{
