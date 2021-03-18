@@ -9,6 +9,7 @@
 #import "STJsonUtil.h"
 #import "UIViewController+TopMostViewController.h"
 #import "STBusManager.h"
+//#import "STFlutterPagePlugin.h"
 
 @implementation STBridgeDefaultCommunication
 +(void) handleBridge:(nullable UIViewController *) viewController functionName:(nullable NSString *) functionName params:(nullable NSString *) params callBackId:(nullable NSString *) callBackId callback: (nullable BridgeHandlerCallback) callback{
@@ -33,7 +34,7 @@
         }
     }else if ([@"close" isEqual: functionName]) {
         dispatch_async(dispatch_get_main_queue(), ^{
-            [[UIViewController topMostViewController].navigationController popViewControllerAnimated:true];
+//            [STFlutterPagePlugin popPage:[UIViewController topMostViewController] argumentsJsonString:params];
         });
         [resultDict setValue:@"true" forKey:@"result"];
     }else if ([@"showToast" isEqual: functionName]) {

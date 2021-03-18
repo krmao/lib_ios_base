@@ -9,5 +9,6 @@
 #import "STInitializer.h"
 
 @interface STBridgeDefaultCommunication : NSObject
+
 +(void) handleBridge:(nullable UIViewController *) viewController functionName:(nullable NSString *) functionName params:(nullable NSString *) params callBackId:(nullable NSString *) callBackId callback: (nullable BridgeHandlerCallback) callback;
 @end

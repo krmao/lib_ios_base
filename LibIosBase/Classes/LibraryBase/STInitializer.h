@@ -9,6 +9,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import <UIKit/UIKit.h>
 
 typedef void (^BridgeHandlerCallback)( NSString * _Nullable callBackId, NSString * _Nullable resultJsonString );
 typedef void (^BridgeHandler)(UIViewController * _Nullable viewController, NSString * _Nullable functionName, NSString * _Nullable params, NSString * _Nullable callBackId, BridgeHandlerCallback _Nullable callback);

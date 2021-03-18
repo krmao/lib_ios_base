@@ -21,6 +21,6 @@
 + (nullable NSDictionary *)dictionaryWithJsonString:(nullable NSString *)jsonString;
 
 // -json串转换成数组
-+ (id)arrayWithJsonString:(nullable NSString *)jsonString;
++ (id _Nullable)arrayWithJsonString:(nullable NSString *)jsonString;
 
 @end
