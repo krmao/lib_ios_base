@@ -9,6 +9,7 @@
 #import "STToastUtil.h"
 #import "STSystemUtil.h"
 #import "MBProgressHUD.h"
+#import "UIColor+ARGB.h"
 
 @implementation STToastUtil
 
@@ -20,38 +21,27 @@
     MBProgressHUD *hud = [[MBProgressHUD alloc]init];
     [view addSubview:hud];
     
-    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
-    hud.bezelView.color = [UIColor colorWithWhite:0.f alpha:0.f];
     hud.userInteractionEnabled = NO;
-    //
-    // hud.backgroundColor = [UIColor clearColor]; // fullscreen background color
-    // hud.contentColor = [UIColor orangeColor];
-    hud.label.text = message;
-    hud.label.numberOfLines = 0;
-    hud.label.textColor = [UIColor whiteColor];
-    // Move to bottm center.
+    hud.backgroundColor = [UIColor clearColor]; // fullscreen background color
+    hud.contentColor = [UIColor clearColor];
     hud.offset = CGPointMake(0.f, MBProgressMaxOffset);
-    hud.mode = MBProgressHUDModeText;
     hud.mode = MBProgressHUDModeCustomView;
-    CGRect rect = [message boundingRectWithSize:CGSizeMake(MAXFLOAT, 20) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:14]} context:nil];
-    hud.minSize = CGSizeMake(rect.size.width+30, 35);
-    hud.bezelView.backgroundColor = [UIColor orangeColor];
-    hud.bezelView.style = MBProgressHUDBackgroundStyleBlur;
+    CGRect messageRect = [message boundingRectWithSize:CGSizeMake(MAXFLOAT, 20) options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName: [UIFont systemFontOfSize:15.0]} context:nil];
+    hud.minSize = CGSizeMake(messageRect.size.width+30, 35);
+    hud.bezelView.color = [UIColor clearColor];
+    hud.bezelView.backgroundColor = [UIColor clearColor];
+    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
     hud.bezelView.layer.masksToBounds = NO;
-    hud.bezelView.layer.backgroundColor = [UIColor blueColor].CGColor;
+    hud.bezelView.layer.backgroundColor = [[UIColor alloc] initWithHex:@"#333333"].CGColor;
     hud.bezelView.layer.cornerRadius = 15.0;
 
-    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 5,rect.size.width+30 ,30)];
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(0, 5, messageRect.size.width+30 ,30)];
     titleLabel.text = message;
     titleLabel.textAlignment = NSTextAlignmentCenter;
-    titleLabel.backgroundColor = [UIColor redColor];
     titleLabel.font = [UIFont systemFontOfSize:15];
-    titleLabel.layer.cornerRadius = 15;
-    titleLabel.layer.masksToBounds = YES;
     titleLabel.textColor = [UIColor whiteColor];
     [hud.bezelView addSubview:titleLabel];
     
-    //
     [hud setRemoveFromSuperViewOnHide:YES];
     [hud showAnimated:animation];
     [hud hideAnimated:animation afterDelay:2.0];
