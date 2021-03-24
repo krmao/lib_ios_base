@@ -7,18 +7,45 @@
 //
 
 #import "STEventManager.h"
+#import "STStringUtil.h"
+
+@implementation Event
+- (instancetype)init:(NSString *)eventKey{
+    self = [super init];
+    if (self) {
+        self.eventKey = eventKey;
+    }
+    return self;
+}
+
+- (instancetype)init:(NSString *)eventKey callbackListener:(CallbackListener)callbackListener{
+    self = [self init:eventKey];
+    if (self) {
+        self.callbackListener = callbackListener;
+    }
+    return self;
+}
+
+- (BOOL)isEqual:(id)other{
+    if (other == self) {
+        return YES;
+    } else if (![super isEqual:other]) {
+        return NO;
+    } else {
+        return [other isKindOfClass:[Event class]] && ![STStringUtil emptyOrNull:((Event *)other).eventKey] && [((Event *)other).eventKey isEqualToString:self.eventKey];
+    }
+}
+@end
 
 static STEventManager *instance = nil;
-
 @interface STEventManager()
-
 @property (nonatomic, strong) NSMutableArray *eventListenerObjects;
-
+@property (nonatomic, strong) NSMutableDictionary<NSString*, NSMutableSet<Event*>*> *eventMap;
 @end
 
 @implementation STEventManager
 
-+(instancetype)sharedInstance{
++ (instancetype)sharedInstance{
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         instance = [[STEventManager alloc] init];
@@ -30,87 +57,58 @@ static STEventManager *instance = nil;
     self = [super init];
     if (self) {
         self.eventListenerObjects = [NSMutableArray array];
+        self.eventMap = NSMutableDictionary.new;
     }
     return self;
 }
 
--(void)registerListener:(id)listener eventName:(NSString *)eventName callback:(EventCallback)callback{
-    if (!listener || eventName.length == 0) {
-        return;
+- (void)register:(NSString *)eventId eventKey:(NSString*)eventKey callbackListener:(CallbackListener)callbackListener{
+    @synchronized (self.eventMap) {
+        NSMutableSet<Event*>* eventSet = [self.eventMap valueForKey:eventId] ?: [[NSMutableSet alloc] init];
+        [eventSet addObject:[[Event alloc] init:eventKey callbackListener:callbackListener]];
+        [self.eventMap setValue:eventSet forKey:eventId];
     }
-    @synchronized (self.eventListenerObjects) {
-        NSArray *tmpArray = [NSArray arrayWithArray:self.eventListenerObjects];
-        for (STEventListenerObject *object in tmpArray) {
-            if ([object.listener isEqual:listener] && [object.eventName isEqualToString:eventName]) {
-                if (callback) {
-                    object.callback = callback;  //覆盖callback，跟Android一致
+}
+
+- (void)unregister:(NSString *)eventId eventKey:(NSString *)eventKey{
+    if([STStringUtil emptyOrNull:eventKey]) return;
+    
+    @synchronized (self.eventMap) {
+        if([[self.eventMap allKeys] containsObject:eventId]){
+            NSMutableSet<Event*>* eventSet = [self.eventMap valueForKey:eventId];
+            if(eventSet != nil && ![eventSet isKindOfClass:[NSNull class]]){
+                [eventSet removeObject:[[Event alloc] init:eventKey]];
+                if(eventSet.count == 0){
+                    [self.eventMap removeObjectForKey:eventId];
+                }else{
+                    [self.eventMap setValue:eventSet forKey:eventId];
                 }
-                return;
             }
-        }
-        STEventListenerObject *object = [[STEventListenerObject alloc] initWithListener:listener eventName:eventName callback:callback];
-        [self.eventListenerObjects addObject:object];
-    }
-
-}
-
--(void)unRegisterListener:(id)listener eventName:(NSString *)eventName{
-    if (!listener || eventName.length == 0) {
-        return;
-    }
-    @synchronized (self.eventListenerObjects) {
-        NSArray *tmpArray = [NSArray arrayWithArray:self.eventListenerObjects];
-        for (STEventListenerObject *object in tmpArray) {
-            if ([object.listener isEqual:listener] && [object.eventName isEqualToString:eventName]) {
-                [self.eventListenerObjects removeObject:object];
-            }
+            
         }
     }
 }
 
--(void)unRegisterListener:(id)listener{
-    if (!listener) {
-        return;
-    }
-    @synchronized (self.eventListenerObjects) {
-        NSArray *tmpArray = [NSArray arrayWithArray:self.eventListenerObjects];
-        for (STEventListenerObject *object in tmpArray) {
-            if ([object.listener isEqual:listener] || object.listener == nil) {
-                [self.eventListenerObjects removeObject:object];
-            }
-        }
+- (void)unregisterAll:(NSString *)eventId{
+    @synchronized (self.eventMap) {
+        [self.eventMap removeObjectForKey:eventId];
     }
 }
 
--(void)sendEvent:(NSString *)eventName eventInfo:(nullable NSDictionary *)eventInfo{
-    if (eventName.length == 0) {
-        return;
-    }
-    NSArray *tmpArray;
-    @synchronized (self.eventListenerObjects) {
-        tmpArray = [NSArray arrayWithArray:self.eventListenerObjects];
-    }
-    for (STEventListenerObject *object in tmpArray) {
-        if ([object.eventName isEqualToString:eventName] ) {
-            if (object.callback) {
-                object.callback(eventInfo);
+- (void)sendEvent:(NSString *)eventKey value:(NSDictionary<NSString *,id> *)value{
+    if([STStringUtil emptyOrNull:eventKey]) return;
+    
+    @synchronized (self.eventMap) {
+        for(NSMutableSet<Event*>* eventSet in [self.eventMap allValues]){
+            if(eventSet != nil && ![eventSet isKindOfClass:[NSNull class]] && eventSet.count > 0){
+                for(Event* event in eventSet){
+                    if([event.eventKey isEqualToString:eventKey]){
+                        event.callbackListener(eventKey, value);
+                    }
+                }
             }
         }
     }
-}
-
-@end
-
-@implementation STEventListenerObject
-
-- (instancetype)initWithListener:(id)listener eventName:(NSString *)eventName callback:(EventCallback)callback{
-    self = [super init];
-    if (self) {
-        self.listener = listener;
-        self.eventName = eventName;
-        self.callback = callback;
-    }
-    return self;
 }
 
 @end

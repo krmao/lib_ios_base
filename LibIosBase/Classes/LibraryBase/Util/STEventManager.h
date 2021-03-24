@@ -8,29 +8,28 @@
 
 #import <Foundation/Foundation.h>
 
-typedef void (^EventCallback)(NSDictionary * _Nullable data);
-@class CTEventListenerObject;
+typedef void (^CallbackListener)(NSString * _Nullable eventKey, NSDictionary<NSString *, id> * _Nullable value);
 
 NS_ASSUME_NONNULL_BEGIN
 
+@interface Event : NSObject
+@property (nonatomic, copy) NSString *eventKey;
+@property (nonatomic, copy) CallbackListener callbackListener;
+- (instancetype)init:(NSString *)eventKey callbackListener:(CallbackListener)callbackListener;
+- (instancetype)init:(NSString *)eventKey;
+@end
+
 @interface STEventManager : NSObject
 
-+(instancetype)sharedInstance;
--(void)registerListener:(id)listener eventName:(NSString *)eventName callback:(EventCallback)callback;
--(void)unRegisterListener:(id)listener eventName:(NSString *)eventName;
--(void)unRegisterListener:(id)listener;
--(void)sendEvent:(NSString *)eventName eventInfo:(nullable NSDictionary *)eventInfo;
++ (instancetype)sharedInstance;
+- (void)register:(NSString *)eventId eventKey:(NSString*)eventKey callbackListener:(CallbackListener)callbackListener;
+- (void)unregister:(NSString *)eventId eventKey:(NSString *)eventKey;
+- (void)unregisterAll:(NSString *)eventId;
+- (void)sendEvent:(NSString *)eventKey value:(NSDictionary<NSString *,id> *)value;
 
 @end
 
-@interface STEventListenerObject : NSObject
 
-@property (nonatomic, weak) id listener; // 需要在vc释放时unRegister，设置为weak，不然释放不了
-@property (nonatomic, copy) NSString *eventName;
-@property (nonatomic, copy) EventCallback callback;
-- (instancetype)initWithListener:(id)listener eventName:(NSString *)eventName callback:(EventCallback)callback;
-
-@end
 
 
 NS_ASSUME_NONNULL_END
